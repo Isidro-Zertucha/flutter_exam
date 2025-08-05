@@ -54,15 +54,15 @@ class AppThemes {
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: Colors.blueGrey[900],
+    primaryColor: Colors.teal[400]!,
     colorScheme: ColorScheme.dark(
-      primary: Colors.blueGrey[900]!,
-      secondary: Colors.tealAccent[400]!,
-      surface: Colors.blueGrey[600]!,
+      primary: Colors.teal[400]!,
+      secondary: Colors.blueGrey[900]!,
+      surface: Colors.blueGrey[900]!,
     ),
     scaffoldBackgroundColor: Colors.blueGrey[900],
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.blueGrey[700],
+      backgroundColor: Colors.teal[900]!,
       elevation: 4.0,
     ),
     cardTheme: CardThemeData(
@@ -75,7 +75,7 @@ class AppThemes {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.white,
-        backgroundColor: Colors.tealAccent[400],
+        backgroundColor: Colors.teal[400],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
