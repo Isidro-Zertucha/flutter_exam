@@ -56,18 +56,18 @@ class AppThemes {
     brightness: Brightness.dark,
     primaryColor: Colors.blueGrey[900],
     colorScheme: ColorScheme.dark(
-      primary: Colors.blueGrey[700]!,
+      primary: Colors.blueGrey[900]!,
       secondary: Colors.tealAccent[400]!,
-      surface: Colors.blueGrey[800]!,
+      surface: Colors.blueGrey[600]!,
     ),
     scaffoldBackgroundColor: Colors.blueGrey[900],
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.blueGrey[800],
+      backgroundColor: Colors.blueGrey[700],
       elevation: 4.0,
     ),
     cardTheme: CardThemeData(
       elevation: 8.0,
-      color: Colors.blueGrey[800]!.withAlpha(200),
+      color: Colors.blueGrey[700]!.withAlpha(200),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16.0),
       ),
