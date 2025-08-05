@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_exam/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 import 'signup_screen.dart';
@@ -7,10 +8,10 @@ class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -33,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
       if (!success && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Invalid username or password')),
+          SnackBar(content: Text(AppLocalizations.of(context)!.invalidUsernameOrPassword)),
         );
       }
     }
@@ -41,13 +42,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Theme.of(context).colorScheme.background,
               Theme.of(context).colorScheme.surface,
+              Theme.of(context).colorScheme.secondary,
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -64,15 +66,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Login', style: Theme.of(context).textTheme.headlineSmall),
+                      Text(l10n.login, style: Theme.of(context).textTheme.headlineSmall),
                       SizedBox(height: 20),
                       TextFormField(
                         controller: _usernameController,
-                        decoration: InputDecoration(labelText: 'Username'),
+                        decoration: InputDecoration(labelText: l10n.username),
                         textInputAction: TextInputAction.next,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a username';
+                            return l10n.pleaseEnterAUsername;
                           }
                           return null;
                         },
@@ -84,12 +86,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(
                         controller: _passwordController,
                         focusNode: _passwordFocusNode,
-                        decoration: InputDecoration(labelText: 'Password'),
+                        decoration: InputDecoration(labelText: l10n.password),
                         obscureText: true,
                         textInputAction: TextInputAction.done,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a password';
+                            return l10n.pleaseEnterAPassword;
                           }
                           return null;
                         },
@@ -98,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: _login,
-                        child: Text('Login'),
+                        child: Text(l10n.login),
                       ),
                       TextButton(
                         onPressed: () {
@@ -107,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                         child: Text(
-                          'Don\'t have an account? Sign up',
+                          l10n.dontHaveAnAccount,
                           style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                         ),
                       ),

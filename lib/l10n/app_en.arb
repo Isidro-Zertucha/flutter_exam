@@ -1,0 +1,21 @@
+{
+  "login": "Login",
+  "username": "Username",
+  "password": "Password",
+  "dontHaveAnAccount": "Don't have an account? Sign up",
+  "signUp": "Sign Up",
+  "email": "Email",
+  "confirmPassword": "Confirm Password",
+  "alreadyHaveAnAccount": "Already have an account? Login",
+  "home": "Home",
+  "welcome": "Welcome, {username}!",
+  "logout": "Logout",
+  "invalidUsernameOrPassword": "Invalid username or password",
+  "usernameAlreadyExists": "Username already exists",
+  "pleaseEnterAUsername": "Please enter a username",
+  "pleaseEnterAnEmail": "Please enter an email",
+  "pleaseEnterAValidEmailAddress": "Please enter a valid email address",
+  "pleaseEnterAPassword": "Please enter a password",
+  "pleaseConfirmYourPassword": "Please confirm your password",
+  "passwordsDoNotMatch": "Passwords do not match"
+}

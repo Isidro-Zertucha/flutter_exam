@@ -1,0 +1,21 @@
+{
+  "login": "Iniciar sesión",
+  "username": "Usuario",
+  "password": "Contraseña",
+  "dontHaveAnAccount": "¿No tienes una cuenta? Regístrate",
+  "signUp": "Registrarse",
+  "email": "Correo electrónico",
+  "confirmPassword": "Confirmar contraseña",
+  "alreadyHaveAnAccount": "¿Ya tienes una cuenta? Inicia sesión",
+  "home": "Inicio",
+  "welcome": "¡Bienvenido, {username}!",
+  "logout": "Cerrar sesión",
+  "invalidUsernameOrPassword": "Usuario o contraseña inválidos",
+  "usernameAlreadyExists": "El nombre de usuario ya existe",
+  "pleaseEnterAUsername": "Por favor, introduce un nombre de usuario",
+  "pleaseEnterAnEmail": "Por favor, introduce un correo electrónico",
+  "pleaseEnterAValidEmailAddress": "Por favor, introduce una dirección de correo electrónico válida",
+  "pleaseEnterAPassword": "Por favor, introduce una contraseña",
+  "pleaseConfirmYourPassword": "Por favor, confirma tu contraseña",
+  "passwordsDoNotMatch": "Las contraseñas no coinciden"
+}

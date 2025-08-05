@@ -1,14 +1,17 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_exam/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 
 class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
+
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  SignUpScreenState createState() => SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
@@ -45,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       } else {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Username already exists')),
+            SnackBar(content: Text(AppLocalizations.of(context)!.usernameAlreadyExists)),
           );
         }
       }
@@ -54,13 +57,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Theme.of(context).colorScheme.background,
               Theme.of(context).colorScheme.surface,
+              Theme.of(context).colorScheme.secondary,
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -77,15 +81,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Sign Up', style: Theme.of(context).textTheme.headlineSmall),
+                      Text(l10n.signUp, style: Theme.of(context).textTheme.headlineSmall),
                       SizedBox(height: 20),
                       TextFormField(
                         controller: _usernameController,
-                        decoration: InputDecoration(labelText: 'Username'),
+                        decoration: InputDecoration(labelText: l10n.username),
                         textInputAction: TextInputAction.next,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a username';
+                            return l10n.pleaseEnterAUsername;
                           }
                           return null;
                         },
@@ -97,15 +101,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _emailController,
                         focusNode: _emailFocusNode,
-                        decoration: InputDecoration(labelText: 'Email'),
+                        decoration: InputDecoration(labelText: l10n.email),
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter an email';
+                            return l10n.pleaseEnterAnEmail;
                           }
                           if (!RegExp(r"^\S+@\S+\.\S+$").hasMatch(value)) {
-                            return 'Please enter a valid email address';
+                            return l10n.pleaseEnterAValidEmailAddress;
                           }
                           return null;
                         },
@@ -117,12 +121,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _passwordController,
                         focusNode: _passwordFocusNode,
-                        decoration: InputDecoration(labelText: 'Password'),
+                        decoration: InputDecoration(labelText: l10n.password),
                         obscureText: true,
                         textInputAction: TextInputAction.next,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a password';
+                            return l10n.pleaseEnterAPassword;
                           }
                           return null;
                         },
@@ -134,15 +138,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _confirmPasswordController,
                         focusNode: _confirmPasswordFocusNode,
-                        decoration: InputDecoration(labelText: 'Confirm Password'),
+                        decoration: InputDecoration(labelText: l10n.confirmPassword),
                         obscureText: true,
                         textInputAction: TextInputAction.done,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please confirm your password';
+                            return l10n.pleaseConfirmYourPassword;
                           }
                           if (value != _passwordController.text) {
-                            return 'Passwords do not match';
+                            return l10n.passwordsDoNotMatch;
                           }
                           return null;
                         },
@@ -151,12 +155,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: _signUp,
-                        child: Text('Sign Up'),
+                        child: Text(l10n.signUp),
                       ),
                       TextButton(
                         onPressed: () => Navigator.of(context).pop(),
                         child: Text(
-                          'Already have an account? Login',
+                          l10n.alreadyHaveAnAccount,
                           style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                         ),
                       )
