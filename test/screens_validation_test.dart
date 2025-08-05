@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_exam/screens/login_screen.dart';
 import 'package:flutter_exam/screens/signup_screen.dart';
+import 'package:flutter_exam/l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_exam/providers/auth_provider.dart';
+import 'package:flutter_exam/providers/locale_provider.dart';
+import 'package:flutter_exam/providers/theme_provider.dart';
 
 void main() {
   // We need a common wrapper for tests that provides the necessary Provider
   Widget createTestableWidget({required Widget child}) {
-    return ChangeNotifierProvider(
-      create: (_) => AuthProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => LocaleProvider()),
+      ],
       child: MaterialApp(
         home: child,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
       ),
     );
   }
