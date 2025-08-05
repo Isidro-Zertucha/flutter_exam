@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_exam/main.dart';
 import 'package:flutter_exam/l10n/app_localizations.dart';
-import 'package:flutter_exam/screens/login_screen.dart';
 import 'package:flutter_exam/screens/home_screen.dart';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_exam/providers/auth_provider.dart';
