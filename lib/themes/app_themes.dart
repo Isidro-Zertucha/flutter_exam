@@ -62,7 +62,7 @@ class AppThemes {
     ),
     scaffoldBackgroundColor: Colors.blueGrey[900],
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.teal[900]!,
+      backgroundColor: Colors.teal[600]!,
       elevation: 4.0,
     ),
     cardTheme: CardThemeData(
