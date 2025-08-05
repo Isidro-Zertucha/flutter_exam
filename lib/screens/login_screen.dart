@@ -48,8 +48,8 @@ class LoginScreenState extends State<LoginScreen> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Theme.of(context).colorScheme.surface,
-              Theme.of(context).colorScheme.secondary,
+              Theme.of(context).colorScheme.primary,
+              Theme.of(context).colorScheme.primary,
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -110,7 +110,7 @@ class LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text(
                           l10n.dontHaveAnAccount,
-                          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+                          style: TextStyle(color: Theme.of(context).colorScheme.primary),
                         ),
                       ),
                     ],
